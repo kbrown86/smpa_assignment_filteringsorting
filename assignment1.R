@@ -24,7 +24,9 @@ View(housesales)
 # 1) The column "year" indicates the year. Filter to return only results from 2015. 
 # (note that because the column is numeric, you wouldn't use quotes as with text when setting your filter value)
 
-
+# filter the year to 2015
+housesales %>%
+  filter(year == 2015)
 
 
 
