@@ -28,35 +28,37 @@ View(housesales)
 housesales %>%
   filter(year == 2015)
 
-
-
 # 2) Similar to the above question, filter results from 2010 onward, so 2010-2015.
 
-
-
+# filter to be less than/equal to 2015, greater than/equal to 2010
+housesales %>%
+  filter(year <= 2015, year >= 2010) 
 
 
 # 3) The "city" column contains the relevant city. Filter to return only results for Houston
 # (note, remember R is case sensitive)
 
-
-
+# filter results for Houston
+housesales %>%
+  filter(city == "Houston")
 
 
 # 4) Filter for only where the city is Houston as above, and now also filter for only 
 # the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
 
-
-
+# filter city for Houston and then year for 2010
+housesales %>%
+  filter(city == "Houston", year == 2010) 
 
 
 # 5) Build on what you've done above. Filter for only where the city is Houston as above, 
 # and the year is 2010. Now add a sort using arrange() to sort the results based on the number
 # of home sales (the "sales" column) from most to least.
 
-
-
-
+# arrange using descending order to go from highest to lowest
+housesales %>%
+  filter(city == "Houston", year == 2010) %>%
+  arrange(desc(sales))
 
 # 6) Piggyback on what you've done above. 
 # Do the same as #5, only this time instead of Houston return records for Dallas
